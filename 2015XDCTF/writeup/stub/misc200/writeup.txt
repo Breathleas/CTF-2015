@@ -1,0 +1,12 @@
+首先使用foremost从源文件里提取出两个zip，其中一个zip含有flag.txt, 但是被加密了
+观察后发现两个zip里面都有个文件叫readme.txt, 并且大小和crc都一样，判断这两个文件相同
+
+从这里可以看出这道题是很经典的zip已知明文攻击，那么我们一定会用到pkcrack
+
+1. 先从未加密的zip中提取出readme.txt
+2. 创建一个新的zip文件，只包括readme.txt
+3. 使用extract提取出没有加密的readme字节
+4. 使用extract提取出加密过的readme字节
+5. 使用pkcrack 输入加密过的和位加密过的的readme的字节来寻找密钥
+6. 找到key0,key1,key2后使用zipdecrypt来解密zip文件
+7. 解压得到flag.txt

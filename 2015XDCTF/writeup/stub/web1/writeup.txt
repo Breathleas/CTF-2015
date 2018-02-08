@@ -1,0 +1,14 @@
+web1-100
+
+访问网站http://133.130.90.172/5008e9a6ea2ab282a9d646befa70d53a/index.php
+查看robot.txt gb2312 解码后得到 Tips:这里什么都没有！注意审题！good Luck!
+OTL....
+去看看临时文件好了，vim的习惯是file.swp, emacs的习惯是file~,
+查看http://133.130.90.172/5008e9a6ea2ab282a9d646befa70d53a/index.php~ 得到加密的php文件
+搜索后，从这里解密http://blog.99tk.cn/decode
+得到解密后的php
+;?><?php
+$test=$_GET['test']; $test=md5($test); if($test=='0') { print "flag{xxxxxx}"; } else print "you are falied!"; print $test; echo...
+
+于是，我们需要让md5(test) == 0, 由于php的eval问题，0exxxxx会被认为是0，因此找到md5使得开头为0e就好了
+查看source，得到flag

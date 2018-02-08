@@ -1,0 +1,4 @@
+参考：http://blog.dragonsector.pl/2013/09/csaw-ctf-quals-2013-slurp-crypto-500.html4
+
+需要注意的一点是 sha512(1) 和 sha512(1L) 是不同的
+坑爹的一点：拿到flag以后将2333放进括号了，作为一部分的flag(这谁想出来的！)

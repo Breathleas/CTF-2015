@@ -1,0 +1,1 @@
+re100: 由於這個程式會就某種意義上是一個字元一個字元的做比對，因此可以寫個gdb script來暴力解flag。耗時是O(len(printable - ascii_uppercase) * 12)。將所得的每個字元異或0x7及是flag。
